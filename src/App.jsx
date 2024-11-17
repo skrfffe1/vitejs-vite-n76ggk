@@ -51,10 +51,16 @@ function Footer({ symbol, date }) {
 }
 
 function App() {
-  const [status, setStatus] = useState("Open");
-  console.log(status);
+  const [status, setStatus] = useState("offline");
+  
   return (
     <>
+      <div>
+        <h4>User is {status}.</h4>
+        <div>
+          <button onClick={()=> setStatus('online')}>login</button>
+        </div>
+      </div>
       <Header title="Learn REACT" />
       <Main recipes={items} />
       <Footer date={new Date().getFullYear()} symbol="©" />
