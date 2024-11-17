@@ -39,12 +39,12 @@ function Main({ recipes }) {
   );
 }
 
-function Footer({ year, symbol }) {
+function Footer({ symbol, date }) {
   return (
     <>
       <hr />
       <h3>
-        copyright {symbol} {year}
+        copyright {symbol} {date}
       </h3>
     </>
   );
@@ -55,9 +55,9 @@ function App() {
   console.log(status);
   return (
     <>
-      <Header title="Learn REACT" date={new Date().getFullYear()} />
+      <Header title="Learn REACT" />
       <Main recipes={items} />
-      <Footer year="2024" symbol="©" />
+      <Footer date={new Date().getFullYear()} symbol="©" />
     </>
   );
 }
