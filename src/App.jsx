@@ -2,10 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import logo from './assets/react.svg';
 
-let title = 'Some of the recipe to learn REACT';
-let year = '2024';
-let symbol = '©';
-
 const items = [
   'persistence',
   'patience',
@@ -14,7 +10,7 @@ const items = [
   'time management',
 ];
 
-function Header({ _title }) {
+function Header({ title }) {
   return (
     <>
       <h1>{title}</h1>
@@ -43,7 +39,7 @@ function Main({ recipes }) {
   );
 }
 
-function Footer({ _year, _symbol }) {
+function Footer({ year, symbol }) {
   return (
     <>
       <hr />
@@ -59,9 +55,9 @@ function App() {
   console.log(status);
   return (
     <>
-      <Header _title={title} date={new Date().getFullYear()} />
+      <Header title="Learn REACT" date={new Date().getFullYear()} />
       <Main recipes={items} />
-      <Footer _year={year} _symbol={symbol} />
+      <Footer year="2024" symbol="©" />
     </>
   );
 }
