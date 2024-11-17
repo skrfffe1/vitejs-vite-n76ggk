@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 import logo from './assets/react.svg';
+
+let title = 'Some of the recipe to learn REACT';
+let year = '2024';
+let symbol = '©';
 
 const items = [
   'persistence',
@@ -8,9 +13,6 @@ const items = [
   'interest',
   'time management',
 ];
-let title = 'Some of the recipe to learn REACT';
-let year = '2024';
-let symbol = '©';
 
 function Header({ _title }) {
   return (
@@ -53,6 +55,8 @@ function Footer({ _year, _symbol }) {
 }
 
 function App() {
+  const [status, setStatus] = useState("Open");
+  console.log(status);
   return (
     <>
       <Header _title={title} date={new Date().getFullYear()} />
