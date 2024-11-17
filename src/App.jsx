@@ -51,14 +51,14 @@ function Footer({ symbol, date }) {
 }
 
 function App() {
-  const [status, setStatus] = useState("offline");
+  const [status, setStatus] = useState(true);
   
   return (
     <>
       <div>
-        <h4>User is {status}.</h4>
+        <h4 style={{fontWeight: 'lighter'}}>User is <span style={status ? {color: 'red'} : {color: 'green'}}>{status ? 'offline' : 'online'}</span> .</h4>
         <div>
-          <button onClick={()=> setStatus('online')}>login</button>
+          <button onClick={()=> setStatus(!status)}>{status ? 'login' : 'logout'}</button>
         </div>
       </div>
       <Header title="Learn REACT" />
